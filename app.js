@@ -15,12 +15,28 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'name',
-      message: 'What is your name?'
+      message: 'What is your name? (Required)',
+      validate: nameInput => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log('Please enter your name.');
+          return false;
+        }
+      }
     },
     {
       type: 'input',
       name: 'gitHub',
-      message: 'Enter your GitHub Username.'
+      message: 'Enter your GitHub Username.',
+      validate: gitInput => {
+        if (gitInput) {
+          return true;
+        } else {
+          console.log('Please enter your GitHub Username.');
+          return false;
+        }
+      }
     },
     {
       type: 'input',
@@ -49,7 +65,15 @@ Add a New Project
     {
       type: 'input',
       name: 'description',
-      message: 'Provide a description of the project (Required)'
+      message: 'Provide a description of the project (Required)',
+      validate: projectDisc => {
+        if (projectDisc) {
+          return true;
+        } else {
+          console.log('Please enter description of the project.');
+          return false;
+        }
+      }
     },
     {
       type: 'checkbox',
@@ -60,7 +84,15 @@ Add a New Project
     {
       type: 'input',
       name: 'link',
-      message: 'Enter the GitHub link to your project. (Required)'
+      message: 'Enter the GitHub link to your project. (Required)',
+      validate: gitLink => {
+        if (gitLink) {
+          return true;
+        } else {
+          console.log('Please enter your name.');
+          return false;
+        }
+      }
     },
     {
       type: 'confirm',
